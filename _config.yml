@@ -1,0 +1,56 @@
+# Site settings
+title: ELAT Home
+email: m.valletorre@tudelft.nl
+description: >
+  Browser-based tool to process and analyse edX logfiles
+lang: en-US
+
+baseurl: "/ELAT" # the subpath of your site, e.g. /blog/
+url: https://mvallet91.github.io/ELAT/ # the base hostname & protocol for your site
+git_address: https://mvallet91.github.io/ELAT/
+git_edit_address: https://mvallet91.github.io/ELAT/blob/gh-pages
+
+# theme options from https://bootswatch.com/
+# comment out this to use default Bootstrap
+bootwatch: paper
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+gems:
+  - jekyll-feed
+  - jekyll-redirect-from
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - .idea/
+  - .gitignore
+  - README.md
+timezone: Europe/Berlin
+defaults:
+- scope:
+    path: _posts
+    type: posts
+  values:
+    layout: post
+    sectionid: blog
+
+- scope:
+    path: _docs
+    type: docs
+  values:
+    layout: docs
+    sectionid: docs
+    seo:
+      type: "WebPage"
+
+collections:
+  docs:
+    permalink: /:collection/:path/
+    output: true
+  posts:
+    permalink: /blog/:year/:month/:day/:title/
+    output: true

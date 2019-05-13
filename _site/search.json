@@ -1,0 +1,67 @@
+[
+
+  
+    
+    
+    {
+      "title": "Welcome",
+      "url": "/ELAT/docs/home/"
+
+    },
+  
+    
+    
+    {
+      "title": "Themes",
+      "url": "/ELAT/docs/themes/"
+
+    },
+  
+    
+    
+    {
+      "title": "Customization",
+      "url": "/ELAT/docs/customization/"
+
+    },
+  
+
+  
+    
+    
+    {
+      "title": "Markdown Cheatsheet",
+      "url": "/ELAT/docs/cheatsheet/"
+
+    },
+  
+    
+    
+    {
+      "title": "Font Awesome Icon List",
+      "url": "/ELAT/docs/font-awesome/"
+
+    },
+  
+    
+    
+    {
+      "title": "Bootstrap Features",
+      "url": "/ELAT/docs/bootstrap/"
+
+    },
+  
+
+
+  
+  {
+  "title": "Jekyll Doc Theme is published!",
+  "url": "/ELAT/blog/2017/05/03/jekyll-doc-theme/"
+  },
+  
+  {
+  "title": "Welcome to Jekyll!",
+  "url": "/ELAT/blog/2017/02/01/welcome-to-jekyll/"
+  }
+  
+]
