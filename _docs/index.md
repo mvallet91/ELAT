@@ -4,47 +4,31 @@ permalink: /docs/home/
 redirect_from: /docs/index.html
 ---
 
-## Getting started
+### Quick Guide
+1. Go to the ELAT [homepage](https://mvallet91.github.io/untitled/) on Google Chrome *(it's highly recommended that you close all other tabs on your Chrome browser, as well as other applications on your computer)* 
+2. Click on **Upload Files**
+3. Upload all metadata files for a **single course** (unzipped) and reload the page when prompted
+4. Upload all **log files** between the starting and ending dates of the course and reload the page when prompted
+5. Some main indicators and plots will be generated in the page
+6. With the **download** buttons, the processed information can be obtained in csv format for further analysis
 
-[GitHub Pages](https://pages.github.com) can automatically generate and serve the website for you.
-Let's say you have a username/organisation `my-org` and project `my-proj`; if you locate Jekyll source under `docs` folder of master branch in your repo `github.com/my-org/my-proj`, the website will be served on `my-org.github.io/my-proj`.
-The good thing about coupling your documentation with the source repo is, whenever you merge features with regarding content to master branch, it will also be published on the webpage instantly.
+### Project
+Based on the [edx-analysis](https://github.com/chauff/edx-analysis) tool, this is a web-based solution to parse the edX log and metadata files, into different possible outputs, ranging from csv files to visualizations. 
+edX log files contain all learners' activity for all the courses of an institution, and filtering the useful information for a researcher or instructor of a particular course may be time consuming and challenging, especially for users with less computer-related experience.
+The process is fully executed in client side (on the browser) to minimize privacy and security risks. 
 
-1. Just [download the source](https://github.com/aksakalli/jekyll-doc-theme/archive/gh-pages.zip) into your repo under `docs` folder.
-2. Edit site settings in  `_config.yml` file according to your project. !!! `baseurl` should be your website's relative URI like `/my-proj` !!!
-3. Replace `favicon.ico` and `img/logonav.png` with your own logo.
+#### Processing Details/Limitations
+- Currently ELAT can only store a **single course** at a time, but the database can be easily deleted and then other courses can be analysed  
+- Currently ELAT is only developed and tested in **[Google Chrome](https://www.google.com/chrome/)**
+- ELAT considers a "session" as a **series of events** of a certain type for a single user. For example a *video interaction session* consists of a series of events where a student interacts with a video: start the video, pause, rewind, and any other events until closing the video. The minimum duration of any type of session (from first to last event) is **5 seconds**. Series of events with less than **5 seconds between them are discarded**.
+- Because of processing limitations, currently ELAT cannot retain sessions that start one day and end in the next one since they belong to different files and the files are processed one by one automatically. This means that some **overnight sessions are lost** 
+-Because of file size limitations, ELAT has to **chunk** some of the bigger into 2 smaller pieces. It does not happen often, but when it does, the sessions that start in a chunk and continue to the next are lost, like overnight sessions 
 
-## Writing content
+#### Current Status
+- Running everything on client side, no server, no information sent over the internet. Deployed on GitHubPage 
+- Working IndexedDB database (automatically generated schema) 
+- Decompress and process gzip files in JavaScript
+- Take contents from decompressed log file, ~~pass to Python script~~, process in-browser, then store into IndexedDB
+- Generate main indicators and graphs
+- Generate and Download csv files for the tables in the database
 
-### Docs
-
-Docs are [collections](https://jekyllrb.com/docs/collections/) of pages stored under `_docs` folder. To create a new page:
-
-**1.** Create a new Markdown as `_docs/my-page.md` and write [front matter](https://jekyllrb.com/docs/frontmatter/) & content such as:
-
-```
----
-title: My Page
-permalink: /docs/my-page/
----
-
-Hello World!
-```
-
-**2.** Add the pagename to `_data/docs.yml` file in order to list in docs navigation panel:
-
-```
-- title: My Group Title
-  docs:
-  - my-page
-```
-
-### Blog posts
-
-Add a new Markdown file such as `2017-05-09-my-post.md` and write the content similar to other post examples.
-
-### Pages
-
-The homepage is located under `index.html` file. You can change the content or design completely different welcome page for your taste. (You can use [bootstrap components](http://getbootstrap.com/components/))
-
-In order to add a new page, create a new `.html` or `.md` (markdown) file under root directory and link it in `_includes/topnav.html`.

@@ -15,15 +15,15 @@
 <meta name="generator" content="Jekyll v3.8.4" />
 <meta property="og:title" content="Welcome" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Getting started" />
-<meta property="og:description" content="Getting started" />
+<meta name="description" content="Quick Guide Go to the ELAT homepage on Google Chrome (it’s highly recommended that you close all other tabs on your Chrome browser, as well as other applications on your computer) Click on Upload Files Upload all metadata files for a single course (unzipped) and reload the page when prompted Upload all log files between the starting and ending dates of the course and reload the page when prompted Some main indicators and plots will be generated in the page With the download buttons, the processed information can be obtained in csv format for further analysis" />
+<meta property="og:description" content="Quick Guide Go to the ELAT homepage on Google Chrome (it’s highly recommended that you close all other tabs on your Chrome browser, as well as other applications on your computer) Click on Upload Files Upload all metadata files for a single course (unzipped) and reload the page when prompted Upload all log files between the starting and ending dates of the course and reload the page when prompted Some main indicators and plots will be generated in the page With the download buttons, the processed information can be obtained in csv format for further analysis" />
 <link rel="canonical" href="http://localhost:4000/ELAT/docs/home/" />
 <meta property="og:url" content="http://localhost:4000/ELAT/docs/home/" />
 <meta property="og:site_name" content="ELAT Home" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2019-05-13T12:21:40+00:00" />
+<meta property="article:published_time" content="2019-05-13T12:53:05+00:00" />
 <script type="application/ld+json">
-{"url":"http://localhost:4000/ELAT/docs/home/","description":"Getting started","headline":"Welcome","@type":"WebPage","dateModified":"2019-05-13T12:21:40+00:00","datePublished":"2019-05-13T12:21:40+00:00","@context":"http://schema.org"}</script>
+{"url":"http://localhost:4000/ELAT/docs/home/","description":"Quick Guide Go to the ELAT homepage on Google Chrome (it’s highly recommended that you close all other tabs on your Chrome browser, as well as other applications on your computer) Click on Upload Files Upload all metadata files for a single course (unzipped) and reload the page when prompted Upload all log files between the starting and ending dates of the course and reload the page when prompted Some main indicators and plots will be generated in the page With the download buttons, the processed information can be obtained in csv format for further analysis","headline":"Welcome","@type":"WebPage","dateModified":"2019-05-13T12:53:05+00:00","datePublished":"2019-05-13T12:53:05+00:00","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -139,50 +139,40 @@
 
         <div class="col-md-8">
             <h1>Welcome</h1>
-            <div id="markdown-content-container"><h2 id="getting-started">Getting started</h2>
-
-<p><a href="https://pages.github.com">GitHub Pages</a> can automatically generate and serve the website for you.
-Let’s say you have a username/organisation <code class="highlighter-rouge">my-org</code> and project <code class="highlighter-rouge">my-proj</code>; if you locate Jekyll source under <code class="highlighter-rouge">docs</code> folder of master branch in your repo <code class="highlighter-rouge">github.com/my-org/my-proj</code>, the website will be served on <code class="highlighter-rouge">my-org.github.io/my-proj</code>.
-The good thing about coupling your documentation with the source repo is, whenever you merge features with regarding content to master branch, it will also be published on the webpage instantly.</p>
-
+            <div id="markdown-content-container"><h3 id="quick-guide">Quick Guide</h3>
 <ol>
-  <li>Just <a href="https://github.com/aksakalli/jekyll-doc-theme/archive/gh-pages.zip">download the source</a> into your repo under <code class="highlighter-rouge">docs</code> folder.</li>
-  <li>Edit site settings in  <code class="highlighter-rouge">_config.yml</code> file according to your project. !!! <code class="highlighter-rouge">baseurl</code> should be your website’s relative URI like <code class="highlighter-rouge">/my-proj</code> !!!</li>
-  <li>Replace <code class="highlighter-rouge">favicon.ico</code> and <code class="highlighter-rouge">img/logonav.png</code> with your own logo.</li>
+  <li>Go to the ELAT <a href="https://mvallet91.github.io/untitled/">homepage</a> on Google Chrome <em>(it’s highly recommended that you close all other tabs on your Chrome browser, as well as other applications on your computer)</em></li>
+  <li>Click on <strong>Upload Files</strong></li>
+  <li>Upload all metadata files for a <strong>single course</strong> (unzipped) and reload the page when prompted</li>
+  <li>Upload all <strong>log files</strong> between the starting and ending dates of the course and reload the page when prompted</li>
+  <li>Some main indicators and plots will be generated in the page</li>
+  <li>With the <strong>download</strong> buttons, the processed information can be obtained in csv format for further analysis</li>
 </ol>
 
-<h2 id="writing-content">Writing content</h2>
+<h3 id="project">Project</h3>
+<p>Based on the <a href="https://github.com/chauff/edx-analysis">edx-analysis</a> tool, this is a web-based solution to parse the edX log and metadata files, into different possible outputs, ranging from csv files to visualizations. 
+edX log files contain all learners’ activity for all the courses of an institution, and filtering the useful information for a researcher or instructor of a particular course may be time consuming and challenging, especially for users with less computer-related experience.
+The process is fully executed in client side (on the browser) to minimize privacy and security risks.</p>
 
-<h3 id="docs">Docs</h3>
+<h4 id="processing-detailslimitations">Processing Details/Limitations</h4>
+<ul>
+  <li>Currently ELAT can only store a <strong>single course</strong> at a time, but the database can be easily deleted and then other courses can be analysed</li>
+  <li>Currently ELAT is only developed and tested in <strong><a href="https://www.google.com/chrome/">Google Chrome</a></strong></li>
+  <li>ELAT considers a “session” as a <strong>series of events</strong> of a certain type for a single user. For example a <em>video interaction session</em> consists of a series of events where a student interacts with a video: start the video, pause, rewind, and any other events until closing the video. The minimum duration of any type of session (from first to last event) is <strong>5 seconds</strong>. Series of events with less than <strong>5 seconds between them are discarded</strong>.</li>
+  <li>Because of processing limitations, currently ELAT cannot retain sessions that start one day and end in the next one since they belong to different files and the files are processed one by one automatically. This means that some <strong>overnight sessions are lost</strong> 
+-Because of file size limitations, ELAT has to <strong>chunk</strong> some of the bigger into 2 smaller pieces. It does not happen often, but when it does, the sessions that start in a chunk and continue to the next are lost, like overnight sessions</li>
+</ul>
 
-<p>Docs are <a href="https://jekyllrb.com/docs/collections/">collections</a> of pages stored under <code class="highlighter-rouge">_docs</code> folder. To create a new page:</p>
+<h4 id="current-status">Current Status</h4>
+<ul>
+  <li>Running everything on client side, no server, no information sent over the internet. Deployed on GitHubPage</li>
+  <li>Working IndexedDB database (automatically generated schema)</li>
+  <li>Decompress and process gzip files in JavaScript</li>
+  <li>Take contents from decompressed log file, <del>pass to Python script</del>, process in-browser, then store into IndexedDB</li>
+  <li>Generate main indicators and graphs</li>
+  <li>Generate and Download csv files for the tables in the database</li>
+</ul>
 
-<p><strong>1.</strong> Create a new Markdown as <code class="highlighter-rouge">_docs/my-page.md</code> and write <a href="https://jekyllrb.com/docs/frontmatter/">front matter</a> &amp; content such as:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
-title: My Page
-permalink: /docs/my-page/
----
-
-Hello World!
-</code></pre></div></div>
-
-<p><strong>2.</strong> Add the pagename to <code class="highlighter-rouge">_data/docs.yml</code> file in order to list in docs navigation panel:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- title: My Group Title
-  docs:
-  - my-page
-</code></pre></div></div>
-
-<h3 id="blog-posts">Blog posts</h3>
-
-<p>Add a new Markdown file such as <code class="highlighter-rouge">2017-05-09-my-post.md</code> and write the content similar to other post examples.</p>
-
-<h3 id="pages">Pages</h3>
-
-<p>The homepage is located under <code class="highlighter-rouge">index.html</code> file. You can change the content or design completely different welcome page for your taste. (You can use <a href="http://getbootstrap.com/components/">bootstrap components</a>)</p>
-
-<p>In order to add a new page, create a new <code class="highlighter-rouge">.html</code> or <code class="highlighter-rouge">.md</code> (markdown) file under root directory and link it in <code class="highlighter-rouge">_includes/topnav.html</code>.</p>
 </div>
             <div style="clear:both;">
               <p class="text-center">
