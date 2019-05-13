@@ -1,4 +1,7 @@
-### Technical Sheet
+---
+title: Technical
+permalink: /docs/technical/
+---
 
 #### Core Use Cases - End Users
 - Researchers and educators interested in analyzing and experimenting on the edX platform, using the information generated through log files (especially users with less programming experience).
