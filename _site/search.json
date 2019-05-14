@@ -12,8 +12,40 @@
     
     
     {
-      "title": "Technical",
+      "title": "Quick Start Guide",
+      "url": "/ELAT/docs/quickstart/"
+
+    },
+  
+    
+    
+    {
+      "title": "What are Sessions?",
+      "url": "/ELAT/docs/sessions/"
+
+    },
+  
+    
+    
+    {
+      "title": "Technical Information",
       "url": "/ELAT/docs/technical/"
+
+    },
+  
+    
+    
+    {
+      "title": "Use Cases - Examples",
+      "url": "/ELAT/docs/use_cases/"
+
+    },
+  
+    
+    
+    {
+      "title": "About - Contact",
+      "url": "/ELAT/docs/about/"
 
     },
   

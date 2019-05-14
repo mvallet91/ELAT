@@ -11,22 +11,22 @@
 
     <link rel="shortcut icon" href="/ELAT/favicon.ico?1">
     <!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>ELAT Home | Jekyll Template for Project Websites providing documentation and blog post pages.</title>
+<title>ELAT | Browser-based tool to process and analyse edX logfiles</title>
 <meta name="generator" content="Jekyll v3.8.4" />
-<meta property="og:title" content="ELAT Home" />
+<meta property="og:title" content="ELAT" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Jekyll Template for Project Websites providing documentation and blog post pages." />
-<meta property="og:description" content="Jekyll Template for Project Websites providing documentation and blog post pages." />
+<meta name="description" content="Browser-based tool to process and analyse edX logfiles" />
+<meta property="og:description" content="Browser-based tool to process and analyse edX logfiles" />
 <link rel="canonical" href="http://localhost:4000/ELAT/" />
 <meta property="og:url" content="http://localhost:4000/ELAT/" />
-<meta property="og:site_name" content="ELAT Home" />
+<meta property="og:site_name" content="ELAT" />
 <script type="application/ld+json">
-{"url":"http://localhost:4000/ELAT/","description":"Jekyll Template for Project Websites providing documentation and blog post pages.","name":"ELAT Home","headline":"ELAT Home","@type":"WebSite","@context":"http://schema.org"}</script>
+{"url":"http://localhost:4000/ELAT/","description":"Browser-based tool to process and analyse edX logfiles","name":"ELAT","headline":"ELAT","@type":"WebSite","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
     <link rel="canonical" href="http://localhost:4000/ELAT/">
-    <link rel="alternate" type="application/rss+xml" title="ELAT Home" href="http://localhost:4000/ELAT/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="ELAT" href="http://localhost:4000/ELAT/feed.xml" />
 </head>
 
 
@@ -42,7 +42,7 @@
         <span class="icon-bar"></span>
       </button>
             <a class="navbar-brand" href="/ELAT/">
-                <span><img src="/ELAT/img/logonav.png" alt="Logo"></span> ELAT Home
+                <span><img src="/ELAT/img/logonav.png" alt="Logo"></span> ELAT
             </a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
@@ -58,7 +58,7 @@
                     </div>
                 </form>
                 <ul class="nav navbar-nav">
-                    <li><a href="https://github.com/aksakalli/jekyll-doc-theme"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+                    <li><a href="https://mvallet91.github.io/ELAT/"><i class="fa fa-github" aria-hidden="true"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -70,8 +70,8 @@
         <div class="wrapper">
             <div class="header-container jumbotron">
     <div class="container">
-        <h1>ELAT: edX Logfile Analysis Tool</h1>
-        <p>Simple browser-based tool to process a course's events from logfiles into a local database for analysis</p>
+        <h1>ELAT: EdX Logfile Analysis Tool</h1>
+        <p>Simple browser-based tool to process events from edX logfiles into a local database for analysis</p>
         <p><a class="btn btn-primary btn-lg" href="/ELAT/docs/home/" role="button">Learn more</a></p>
     </div>
 </div>
@@ -82,8 +82,15 @@
             <h2 class="header-light regular-pad">What is ELAT?</h2>
               <p class="lead">ELAT is a simple, browser-based, fully local processing tool that can
                 take the logfiles with events produced by edX and generate a database that can be
-                downloaded as csv files, along with some basic indicators of students in a given edX
-                course. You can start using ELAT simply by going to the
+                downloaded as csv files, along with some basic indicators of students in a given
+                <strong>edX</strong> course.
+                It is an ongoing project developed by the Delft Data Science
+                <a href="https://www.tudelft.nl/ewi/samenwerken/delft-data-science/">(DDS)</a> Initiative,
+                for Learning Analytics research from the Web Information Systems
+                <a href="https://www.tudelft.nl/ewi/over-de-faculteit/afdelingen/software-technology/web-information-systems/">(WIS)</a>
+                Group together with the Centre for Education and Learning <a href="https://www.educationandlearning.nl/home">(CEL)</a>
+                and the <a href="https://online-learning.tudelft.nl/">TU Delft Extension School</a>.
+                You can start using ELAT simply by going to the
                 <a href="https://mvallet91.github.io/untitled/">homepage</a> and uploading
                 metadata files and logfiles (uploading to your own browser, there is no server involved).
                 The code is fully available <a href="https://github.com/mvallet91/untitled">here</a>.</p>
@@ -95,27 +102,35 @@
     </div>
     <hr>
     <div class="row">
-        <div class="col-sm-4">
-            <h1 class="text-center"><i class="fa fa-pencil" aria-hidden="true"></i></h1>
-            <h3 class="text-center">Easy and Private</h3>
-            <p>Get started by uploading the metadata files of the course, then the logfiles in the corresponding
-              time period. Once processed, the csv files for each type of session can be downloaded.
-              Everything stays in your computer and everything can be deleted with a single button.
-            </p>
-        </div>
+        <h2 class="header-light regular-pad">Why use ELAT?</h2>
+    </div>
+    <div class="row">
         <div class="col-sm-4">
             <h1 class="text-center"><i class="fa fa-cogs" aria-hidden="true"></i></h1>
             <h3 class="text-center">Session Focused</h3>
-            <p>ELAT considers a student's session as a series of events of a certain type, for example
-            a video interaction session starts when a student opens a video, and the session contains
-            the number of pauses, rewinds, fast forwards, etc., until the video is closed</p>
+            <p>ELAT considers a student's <a href="/ELAT/docs/sessions/">session</a>
+              as a series of interactions with course material, such as mouse clicks, video controls or problem responses.
+              ELAT processes sessions of different types, for example: a video interaction session starts when a
+              student opens a video, and it contains the number of pauses, rewinds, fast forwards, etc.,
+              until the video is closed</p>
+        </div>
+        <div class="col-sm-4">
+            <h1 class="text-center"><i class="fa fa-pencil" aria-hidden="true"></i></h1>
+            <h3 class="text-center">Easy and Private</h3>
+            <p> <a href="/ELAT/docs/quickstart/">Get started</a> by uploading
+              the metadata files of the course, then the logfiles of the corresponding time period.
+              Once processed, the csv files for each type of session can be downloaded.
+              Everything stays in your computer and everything can be deleted with a single button.
+            </p>
         </div>
         <div class="col-sm-4">
             <h1 class="text-center"><i class="fa fa-area-chart" aria-hidden="true"></i></h1>
             <h3 class="text-center">Primary Indicators</h3>
             <p>From the information extracted from the logfiles, ELAT automatically generates a
-            few general indicators, such as the number of students per day, and the duration
-            of their sessions.</p>
+              few general indicators, such as the number of students per day, and the duration
+              of their sessions. While these indicators provide a helpful overview on the processed
+              information, it's just one of many <a href="/ELAT/docs/use_cases/">use cases</a>
+              of ELAT in Learning Analytics, the main value is in the generated csv files.</p>
         </div>
     </div>
 </div>
@@ -127,7 +142,7 @@
     <div class="container">
 
         <p class="text-center">
-            ELAT Home 2019 |
+            ELAT 2019 |
             Powered by <a href="https://github.com/aksakalli/jekyll-doc-theme">Jekyll Doc Theme</a>
         </p>
         <!-- <p class="text-muted">Place sticky footer content here.</p> -->

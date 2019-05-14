@@ -4,18 +4,20 @@ permalink: /docs/home/
 redirect_from: /docs/index.html
 ---
 
-### Quick Guide
-1. Go to the ELAT [homepage](https://mvallet91.github.io/untitled/) on Google Chrome *(it's highly recommended that you close all other tabs on your Chrome browser, as well as other applications on your computer)* 
-2. Click on **Upload Files**
-3. Upload all metadata files for a **single course** (unzipped) and reload the page when prompted
-4. Upload all **log files** between the starting and ending dates of the course and reload the page when prompted
-5. Some main indicators and plots will be generated in the page
-6. With the **download** buttons, the processed information can be obtained in csv format for further analysis
-
-### Project
-Based on the [edx-analysis](https://github.com/chauff/edx-analysis) tool, this is a web-based solution to parse the edX log and metadata files, into different possible outputs, ranging from csv files to visualizations. 
-edX log files contain all learners' activity for all the courses of an institution, and filtering the useful information for a researcher or instructor of a particular course may be time consuming and challenging, especially for users with less computer-related experience.
+### The Project
+Based on the [edx-analysis](https://github.com/chauff/edx-analysis) approach, ELAT is a web-based tool to 
+parse the edX metadata and logfiles into a database that can generate different outputs, mainly **csv** 
+files and visualizations. 
+Given that each edX logfile contain the interactions of **all** learners for **all** the courses of an 
+institution throughout a day, filtering the useful information for a researcher or instructor of a particular 
+course may be time consuming and challenging.
+Here is where ELAT shines, as it handles all the pre-processing of the logfiles and generates structured 
+data that can be used for further analysis, such as learning experiments in R or Python.
 The process is fully executed in client side (on the browser) to minimize privacy and security risks. 
+
+#### Who is ELAT for?
+- Researchers and educators interested in analyzing and experimenting on the edX platform, using 
+the information generated through log files (especially users with less programming experience).
 
 #### Processing Details/Limitations
 - Currently ELAT can only store a **single course** at a time, but the database can be easily deleted and then other courses can be analysed  
@@ -25,8 +27,8 @@ The process is fully executed in client side (on the browser) to minimize privac
 -Because of file size limitations, ELAT has to **chunk** some of the bigger into 2 smaller pieces. It does not happen often, but when it does, the sessions that start in a chunk and continue to the next are lost, like overnight sessions 
 
 #### Current Status
-- Running everything on client side, no server, no information sent over the internet. Deployed on GitHubPage 
-- Working IndexedDB database (automatically generated schema) 
+- Running everything on client side, no server, no information sent over the internet. Deployed on GitHub Pages 
+- Working IndexedDB database, [schema](https://github.com/AngusGLChen/DelftX-Daily-Database#database-schema) adapted from the [MOOCdb Model](http://mooclearnerproject.csail.mit.edu/)
 - Decompress and process gzip files in JavaScript
 - Take contents from decompressed log file, ~~pass to Python script~~, process in-browser, then store into IndexedDB
 - Generate main indicators and graphs

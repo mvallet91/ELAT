@@ -1,7 +1,11 @@
 - title: Getting Started
   docs:
   - home
+  - quickstart
+  - sessions
   - technical
+  - use_cases
+  - about
 
 - title: Examples
   docs:
