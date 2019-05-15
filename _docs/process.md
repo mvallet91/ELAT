@@ -5,12 +5,12 @@ permalink: /docs/process/
 
 ### Process Pipeline
 
-##### 1.- User enters the website:
+##### 1. User enters the website:
 As soon as the interested user visits the ELAT homepage, the 
 [schema](https://github.com/AngusGLChen/DelftX-Daily-Database#database-schema) for the database is generated
 in the local IndexedDB.
 
-##### 2.- User uploads metadata files to browser:
+##### 2. User uploads metadata files to browser:
 By uploading the metadata files, ELAT obtains all the information from the course itself:
 - Basic course information such as identifier, name, start and finish date
 - List of students with their characteristics: demographics, registration, status, etc. 
@@ -18,14 +18,14 @@ By uploading the metadata files, ELAT obtains all the information from the cours
 - Forum information: Posts and comments with date, author, etc.
 - And more
 
-##### 3.- User upload log files to browser: 
+##### 3. User upload log files to browser: 
 The user must upload all files in the time period between start and end of the course.
 The logfiles are named like this: _delftx-edx-events-2014-10-25.log.gz_. 
 This is the institution name, followed by _-edx-events-_ and the date of the file. 
 The format of the file is _.log_ and it is compressed using **gzip**, that's why it ends with _.gz_. 
 ELAT will decompress the files, so don't worry about this.
 
-##### 4.- Log file(s) are processed in browser 
+##### 4. Log file(s) are processed in browser 
 Each log file contains every interaction of every student for all active courses of an institution. 
 For example, for [DelftX](https://www.edx.org/school/delftx) (the TU Delft MOOC profile in edX) there can be 
 dozens of courses active simultaneously, and the activity of a single day can have hundreds of thousands records. 
@@ -67,8 +67,8 @@ video **79633017711e44c9878df4f337014766** at **16:15:36** of October 15, 2015.
 ELAT will read each record and find the ones that correspond to the course it's currently processing, and
 from those, identify which ones correspond to the same user and belong to the same [session](/ELAT/docs/sessions).
 
-##### 5.- Info is stored in browser 
+##### 5. Info is stored in browser 
 Once processed, the sessions are stored into the [database](https://github.com/AngusGLChen/DelftX-Daily-Database#database-schema)
 with the information extracted from the logfiles.
 
-##### 6.- System prepares indicators, graphs and files for download 
+##### 6. System prepares indicators, graphs and files for download 

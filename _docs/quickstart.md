@@ -10,7 +10,8 @@ recommended that you close other tabs on your Chrome browser, as well as other a
 3. Upload **all** metadata files for a **single course**, this should take a minute or less.
 Reload the page when prompted
 4. Upload all the **logfiles** (named something like _university-edx-events-2014-10-25.log.gz_) between the 
-starting and ending dates of the course, this will take around 2 to 3 hours. Reload the page when prompted
+starting and ending dates of the course, this will take around **2 to 3 hours**. Once the process starts,
+ tou can leave it working. Reload the page when prompted
 5. Some main indicators and plots will be generated in the page, it will take a few minutes the first time
 6. The processed [tables](https://github.com/AngusGLChen/DelftX-Daily-Database#database-schema) 
 can be obtained in csv format for further analysis with the **download** buttons
