@@ -15,15 +15,15 @@
 <meta name="generator" content="Jekyll v3.8.4" />
 <meta property="og:title" content="Welcome" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="The Project Based on the edx-analysis approach, ELAT is a web-based tool to parse the edX metadata and logfiles into a database that can generate different outputs, mainly csv files and visualizations. Given that each edX logfile contain the interactions of all learners for all the courses of an institution throughout a day, filtering the useful information for a researcher or instructor of a particular course may be time consuming and challenging. Here is where ELAT shines, as it handles all the pre-processing of the logfiles and generates structured data that can be used for further analysis, such as learning experiments in R or Python. The process is fully executed in client side (on the browser) to minimize privacy and security risks." />
-<meta property="og:description" content="The Project Based on the edx-analysis approach, ELAT is a web-based tool to parse the edX metadata and logfiles into a database that can generate different outputs, mainly csv files and visualizations. Given that each edX logfile contain the interactions of all learners for all the courses of an institution throughout a day, filtering the useful information for a researcher or instructor of a particular course may be time consuming and challenging. Here is where ELAT shines, as it handles all the pre-processing of the logfiles and generates structured data that can be used for further analysis, such as learning experiments in R or Python. The process is fully executed in client side (on the browser) to minimize privacy and security risks." />
+<meta name="description" content="The Project ELAT is a web-based tool to pre-process the edX metadata and logfiles into a structured database, to generate csv files for analysis and visualizations. Given that each edX logfile contain the interactions of all learners for all the courses of an institution throughout a day, filtering the useful information for a researcher or instructor of a particular course may be time consuming and challenging. Here is where ELAT shines, as it handles all the pre-processing of the logfiles and generates structured data that can be used for further analysis, such as experiments in R or Python. The process is fully executed in client side (on the browser) to minimize privacy and security risks. It is developed in the Delft University of Technology, based on the edx-analysis approach, read more about it here." />
+<meta property="og:description" content="The Project ELAT is a web-based tool to pre-process the edX metadata and logfiles into a structured database, to generate csv files for analysis and visualizations. Given that each edX logfile contain the interactions of all learners for all the courses of an institution throughout a day, filtering the useful information for a researcher or instructor of a particular course may be time consuming and challenging. Here is where ELAT shines, as it handles all the pre-processing of the logfiles and generates structured data that can be used for further analysis, such as experiments in R or Python. The process is fully executed in client side (on the browser) to minimize privacy and security risks. It is developed in the Delft University of Technology, based on the edx-analysis approach, read more about it here." />
 <link rel="canonical" href="http://localhost:4000/ELAT/docs/home/" />
 <meta property="og:url" content="http://localhost:4000/ELAT/docs/home/" />
 <meta property="og:site_name" content="ELAT" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2019-05-14T14:55:00+00:00" />
+<meta property="article:published_time" content="2019-05-15T14:10:53+00:00" />
 <script type="application/ld+json">
-{"url":"http://localhost:4000/ELAT/docs/home/","description":"The Project Based on the edx-analysis approach, ELAT is a web-based tool to parse the edX metadata and logfiles into a database that can generate different outputs, mainly csv files and visualizations. Given that each edX logfile contain the interactions of all learners for all the courses of an institution throughout a day, filtering the useful information for a researcher or instructor of a particular course may be time consuming and challenging. Here is where ELAT shines, as it handles all the pre-processing of the logfiles and generates structured data that can be used for further analysis, such as learning experiments in R or Python. The process is fully executed in client side (on the browser) to minimize privacy and security risks.","headline":"Welcome","@type":"WebPage","dateModified":"2019-05-14T14:55:00+00:00","datePublished":"2019-05-14T14:55:00+00:00","@context":"http://schema.org"}</script>
+{"url":"http://localhost:4000/ELAT/docs/home/","description":"The Project ELAT is a web-based tool to pre-process the edX metadata and logfiles into a structured database, to generate csv files for analysis and visualizations. Given that each edX logfile contain the interactions of all learners for all the courses of an institution throughout a day, filtering the useful information for a researcher or instructor of a particular course may be time consuming and challenging. Here is where ELAT shines, as it handles all the pre-processing of the logfiles and generates structured data that can be used for further analysis, such as experiments in R or Python. The process is fully executed in client side (on the browser) to minimize privacy and security risks. It is developed in the Delft University of Technology, based on the edx-analysis approach, read more about it here.","headline":"Welcome","@type":"WebPage","dateModified":"2019-05-15T14:10:53+00:00","datePublished":"2019-05-15T14:10:53+00:00","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -105,6 +105,10 @@
           
             
             
+            <a class="list-group-item " href="/ELAT/docs/process/">Process - Under the Hood</a>
+          
+            
+            
             <a class="list-group-item " href="/ELAT/docs/technical/">Technical Information</a>
           
             
@@ -155,39 +159,50 @@
         <div class="col-md-8">
             <h1>Welcome</h1>
             <div id="markdown-content-container"><h3 id="the-project">The Project</h3>
-<p>Based on the <a href="https://github.com/chauff/edx-analysis">edx-analysis</a> approach, ELAT is a web-based tool to 
-parse the edX metadata and logfiles into a database that can generate different outputs, mainly <strong>csv</strong> 
-files and visualizations. 
+<p>ELAT is a web-based tool to pre-process the edX metadata and logfiles into a structured database, 
+to generate <strong>csv</strong> files for analysis and visualizations.
 Given that each edX logfile contain the interactions of <strong>all</strong> learners for <strong>all</strong> the courses of an 
 institution throughout a day, filtering the useful information for a researcher or instructor of a particular 
 course may be time consuming and challenging.
 Here is where ELAT shines, as it handles all the pre-processing of the logfiles and generates structured 
-data that can be used for further analysis, such as learning experiments in R or Python.
-The process is fully executed in client side (on the browser) to minimize privacy and security risks.</p>
+data that can be used for further analysis, such as experiments in R or Python.
+The process is fully executed in client side (on the browser) to minimize privacy and security risks. 
+It is developed in the Delft University of Technology, based on the <a href="https://github.com/chauff/edx-analysis">edx-analysis</a> 
+approach, read more about it <a href="/ELAT/docs/about">here</a>.</p>
 
 <h4 id="who-is-elat-for">Who is ELAT for?</h4>
-<ul>
-  <li>Researchers and educators interested in analyzing and experimenting on the edX platform, using 
-the information generated through log files (especially users with less programming experience).</li>
-</ul>
+<p>Researchers, lecturers, educators, and anyone interested in analyzing and experimenting on the edX platform, 
+using the information buried in logfiles.
+It requires minimal effort, no installation, no programming experience.</p>
 
-<h4 id="processing-detailslimitations">Processing Details/Limitations</h4>
+<h4 id="important-detailslimitations">Important Details/Limitations</h4>
 <ul>
-  <li>Currently ELAT can only store a <strong>single course</strong> at a time, but the database can be easily deleted and then other courses can be analysed</li>
-  <li>Currently ELAT is only developed and tested in <strong><a href="https://www.google.com/chrome/">Google Chrome</a></strong></li>
-  <li>ELAT considers a “session” as a <strong>series of events</strong> of a certain type for a single user. For example a <em>video interaction session</em> consists of a series of events where a student interacts with a video: start the video, pause, rewind, and any other events until closing the video. The minimum duration of any type of session (from first to last event) is <strong>5 seconds</strong>. Series of events with less than <strong>5 seconds between them are discarded</strong>.</li>
-  <li>Because of processing limitations, currently ELAT cannot retain sessions that start one day and end in the next one since they belong to different files and the files are processed one by one automatically. This means that some <strong>overnight sessions are lost</strong> 
--Because of file size limitations, ELAT has to <strong>chunk</strong> some of the bigger into 2 smaller pieces. It does not happen often, but when it does, the sessions that start in a chunk and continue to the next are lost, like overnight sessions</li>
+  <li>Currently ELAT can only store a <strong>single course</strong> at a time, but the database can be easily deleted 
+and then other courses can be analysed</li>
+  <li>Currently ELAT is only <strong>developed and tested</strong> in <a href="https://www.google.com/chrome/">Google Chrome</a></li>
+  <li>The minimum duration of a <a href="/ELAT/docs/sessions">session</a> (from first to last event) is <strong>5 seconds</strong>. 
+Series of events with less than 5 seconds between start and finish are <strong>discarded</strong>.
+(ELAT considers a <a href="/ELAT/docs/sessions">“session”</a> as a <strong>series of events</strong> of a certain type 
+for a single user.)</li>
+  <li><a href="/ELAT/docs/sessions">Sessions</a> end when the student closes the course element they were interacting with, or after a period 
+of inactivity. Currently, this period is <strong>30 minutes</strong>.</li>
+  <li>Because of processing limitations, currently ELAT cannot retain <a href="/ELAT/docs/sessions">sessions</a> that start one day and 
+end in the next, since they belong to different files and the files are processed one by one. 
+This means that some <strong>overnight sessions are split into two separate sessions</strong></li>
+  <li>Because of file size limitations (files over ~73MB compressed, ~2GB uncompressed), ELAT has to <strong>chunk</strong> 
+some of the bigger into smaller pieces. It does not happen often, but when it does, the sessions that 
+start in a chunk and continue to the next are split in two, like overnight sessions.</li>
 </ul>
 
 <h4 id="current-status">Current Status</h4>
 <ul>
-  <li>Running everything on client side, no server, no information sent over the internet. Deployed on GitHub Pages</li>
+  <li>Running everything on client side, no server, no information sent over the internet.</li>
+  <li>Deployed on GitHub Pages</li>
   <li>Working IndexedDB database, <a href="https://github.com/AngusGLChen/DelftX-Daily-Database#database-schema">schema</a> adapted from the <a href="http://mooclearnerproject.csail.mit.edu/">MOOCdb Model</a></li>
   <li>Decompress and process gzip files in JavaScript</li>
-  <li>Take contents from decompressed log file, <del>pass to Python script</del>, process in-browser, then store into IndexedDB</li>
+  <li>Take contents from decompressed log file, process in-browser, then store into IndexedDB</li>
   <li>Generate main indicators and graphs</li>
-  <li>Generate and Download csv files for the tables in the database</li>
+  <li>Prepare csv files for download from the tables in the database</li>
 </ul>
 
 </div>

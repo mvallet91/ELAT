@@ -2,7 +2,7 @@
 title: ELAT
 email: m.valletorre@tudelft.nl
 description: >
-  Browser-based tool to process and analyse edX logfiles
+  edX Logfile Analysis Tool
 lang: en-US
 
 baseurl: "/ELAT" # the subpath of your site, e.g. /blog/

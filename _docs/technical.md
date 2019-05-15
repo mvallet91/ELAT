@@ -5,43 +5,23 @@ permalink: /docs/technical/
 
 #### Requirements
 
-- Web application (fully client-side - platform agnostic)
+- Web application: fully client-side - platform agnostic
 
-- Persistent database (stored in the client machine, via IndexedDB, such as _%LocalAppData%\Google\Chrome\User Data\Default\Local Storage_)
+- Persistent database: stored in IndexedDB, locally, in path such as 
+_%LocalAppData%\Google\Chrome\User Data\Default\Local Storage_
 
-- Input: edX metadata files, edX daily log files in gzip format, as obtained from the institution's [_data czar_](https://edx.readthedocs.io/projects/devdata/en/stable/internal_data_formats/data_czar.html), who in turn obtains everything from edX
+- Input: edX metadata files, edX daily log files in gzip format, as obtained from the institution's 
+[_data czar_](https://edx.readthedocs.io/projects/devdata/en/stable/internal_data_formats/data_czar.html), 
+who in turn obtains everything from edX
 
-- Outputs: csv files (one for each table: sessions, video_interactions, quiz_sessions, etc.), reports with aggregated information (metrics and indicators TBD) and with temporal values (also TBD)
-
-#### Process Pipeline
-
-1.- User accesses website
-
-2.- User uploads metadata files to browser 
-
-3.- User specifies configuration options
-
-    a.- Select course identifier 
-    
-    b.- Select modes: Learner, Video, Forum, Quiz... 
-    
-    c.- Select data output: full csv, reports, metrics
-    
-    d.- Select visualizations types: Video Interactions, Behavior Pattern, from reports...  and granularity: total, by module, week...
-
-4.- User upload log file(s) to browser 
-
-5.- Log file(s) are processed in browser 
-
-7.- Info is stored in browser 
-
-8.- System returns the selected files for download
+- Outputs: csv files (one for each table - sessions, video_interactions, quiz_sessions, etc.), quick indicators
+and metrics, insight graphs. 
 
 ### Development Choices/Challenges
 
 - Website deployment
 
-    - Currently github pages
+    - Currently GitHub Pages
 
 - Uploading files to browser using [FileReader](https://developer.mozilla.org/en-US/docs/Web/API/FileReader) 
 
@@ -61,15 +41,13 @@ permalink: /docs/technical/
     
     - **Not necessary** Write from scratch in JavaScript 
 
-- Database
+- Database Tools
 
     - [JsStore](https://github.com/ujjwalguptaofficial/JsStore) + [SQLWeb](https://github.com/ujjwalguptaofficial/sqlweb) + [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) SQLWeb parses regular SQL queries into api calls for JsStore, which is an SQL-focused wrapper for IndexedDB, a local key-value store in most modern browsers. Might be problematic when adding new rows from logs, and for the metrics queries (especially JOINS) already created in SQL.  
     
-    - [WebStorage](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API) **(worst option)** to store JS serialized objects: localStorage (persist in browser) or sessionStorage (cleared when browser is closed), Max 5 MB Chrome, 10 MB Firefox, per origin
+#### Existing Alternatives for edX Analytics
 
-#### Existing Tools
-
-- edX [Analytics](https://github.com/edx/edx-analytics-pipeline) and Insights](https://edx.readthedocs.io/projects/edx-insights/en/latest/): Proprietary pipeline for the edX [analytics dashboard](https://github.com/edx/edx-analytics-dashboard) and [edX Insights](https://edx.readthedocs.io/projects/edx-insights/en/latest/index.html#)
+- edX [Analytics](https://github.com/edx/edx-analytics-pipeline) and [Insights](https://edx.readthedocs.io/projects/edx-insights/en/latest/): Proprietary pipeline for the edX [analytics dashboard](https://github.com/edx/edx-analytics-dashboard) and [edX Insights](https://edx.readthedocs.io/projects/edx-insights/en/latest/index.html#)
 
 - Event log parser [pyedx](https://github.com/epfl-cede/pyedx): Written in Python, it parses the edX log file into CEDE (Center for Digital Education) format JSON, used by the Ecole Polytecnique Federale de Lausanne (EPFL)
 

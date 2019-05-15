@@ -23,7 +23,7 @@ Currently, the WIS Group is joining efforts with the Centre for Education and Le
 [Extension School](https://online-learning.tudelft.nl/) to strengthen research in learning and education.
 We think that more people would like to use edX data for research, so the next step is to simplify the 
 use of the edx-analysis tool by creating ELAT for interested researchers that would like to avoid 
-cumbersome installations and informational barriers and get straight to work with useful information.
+cumbersome installations and other informational barriers to get straight to work with useful information.
 
 #### Contact
 - Main Contact: Manuel Valle Torre - M (dot) ValleTorre (at) tudelft (dot) nl
