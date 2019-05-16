@@ -1,5 +1,5 @@
 ---
-title: Output Data: Sessions Information
+title: Output Data Information - Sessions 
 permalink: /docs/sessions/
 ---
 ### Learner Sessions
