@@ -6,7 +6,7 @@ permalink: /docs/process/
 ### Process Pipeline
 
 ##### 1. User enters the website:
-As soon as the interested user visits the ELAT homepage, the 
+As soon as the interested user visits the ELAT workbench, the 
 [schema](https://github.com/AngusGLChen/DelftX-Daily-Database#database-schema) for the database is generated
 in the local IndexedDB.
 

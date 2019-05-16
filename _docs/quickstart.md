@@ -4,7 +4,7 @@ permalink: /docs/quickstart/
 ---
 
 ### Quick-Start Guide
-1. Go to the ELAT [homepage](https://mvallet91.github.io/untitled/) on Google Chrome *(it's highly 
+1. Go to the ELAT [workbench](https://mvallet91.github.io/ELAT-Workbench/) on Google Chrome *(it's highly 
 recommended that you close other tabs on your Chrome browser, as well as other applications on your computer)* 
 2. Click on **Upload Files** to show 2 upload fields, one for Metadata and one for Logfiles
 3. Upload **all** metadata files for a **single course**, this should take a minute or less.
@@ -20,7 +20,7 @@ can be obtained in csv format for further analysis with the **download** buttons
 
 #### Step-by-Step Images: 
 
-1. Homepage
+1. Workbench Home
 
 2. Upload Files
 
