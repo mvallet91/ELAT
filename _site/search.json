@@ -20,7 +20,7 @@
     
     
     {
-      "title": "What are Sessions?",
+      "title": "Output Data Information - Sessions",
       "url": "/ELAT/docs/sessions/"
 
     },
@@ -87,13 +87,8 @@
 
   
   {
-  "title": "Jekyll Doc Theme is published!",
-  "url": "/ELAT/blog/2017/05/03/jekyll-doc-theme/"
-  },
-  
-  {
-  "title": "Welcome to Jekyll!",
-  "url": "/ELAT/blog/2017/02/01/welcome-to-jekyll/"
+  "title": "Welcome to ELAT!",
+  "url": "/ELAT/blog/2019/05/16/welcome-to-elat/"
   }
   
 ]

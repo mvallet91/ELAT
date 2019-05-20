@@ -72,3 +72,8 @@ Once processed, the sessions are stored into the [database](https://github.com/A
 with the information extracted from the logfiles.
 
 ##### 6. System prepares indicators, graphs and files for download 
+
+
+### Architecture
+![alt text](/ELAT/img/elat_architecture.png "ELAT Modules")
+
