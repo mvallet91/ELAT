@@ -56,8 +56,9 @@ The `time` field, however, refers to the 2 of May, at a completely different tim
 `received_at` and `time` had differences of less than one second).
 One explanation could be if edX app takes the time of the device, and this particular user had the time wrong for some reason.
 Or maybe the user watched the video the 2nd of May, but did not go online until the 15 of May on that device.
-All records had `time` and `received_at` within a small time frame, so it's difficult to determine which option is more 
-likely to be correct (if any).
+All records of this user had `time` and `received_at` within a small time frame, so it's not useful to determine which option 
+is more likely to be correct.
+In addition, the official starting date of the course is May 1st, so both explanations are still plausible. 
 
 ##### Discovery
 One of the options for the date range of the graphs is "All uploaded files", perfect if the user wants to visualize sessions
