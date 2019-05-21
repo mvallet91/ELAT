@@ -1,3 +1,148 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-US"><generator uri="https://jekyllrb.com/" version="3.8.4">Jekyll</generator><link href="http://localhost:4000/ELAT/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/ELAT/" rel="alternate" type="text/html" hreflang="en-US" /><updated>2019-05-20T09:47:41+00:00</updated><id>http://localhost:4000/ELAT/feed.xml</id><title type="html">ELAT</title><subtitle>edX Logfile Analysis Tool
-</subtitle><entry><title type="html">Welcome to ELAT!</title><link href="http://localhost:4000/ELAT/blog/2019/05/16/welcome-to-elat/" rel="alternate" type="text/html" title="Welcome to ELAT!" /><published>2019-05-16T17:41:09+00:00</published><updated>2019-05-16T17:41:09+00:00</updated><id>http://localhost:4000/ELAT/blog/2019/05/16/welcome-to-elat</id><content type="html" xml:base="http://localhost:4000/ELAT/blog/2019/05/16/welcome-to-elat/">&lt;p&gt;This is the beginning of the edX Logfile Analysis Tool, there is a lot to come, and it will be posted here
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-US"><generator uri="https://jekyllrb.com/" version="3.8.4">Jekyll</generator><link href="http://localhost:4000/ELAT/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/ELAT/" rel="alternate" type="text/html" hreflang="en-US" /><updated>2019-05-21T12:42:17+00:00</updated><id>http://localhost:4000/ELAT/feed.xml</id><title type="html">ELAT</title><subtitle>edX Logfile Analysis Tool
+</subtitle><entry><title type="html">Mobile Video Interaction</title><link href="http://localhost:4000/ELAT/blog/2019/05/21/mobile_video/" rel="alternate" type="text/html" title="Mobile Video Interaction" /><published>2019-05-21T11:44:19+00:00</published><updated>2019-05-21T11:44:19+00:00</updated><id>http://localhost:4000/ELAT/blog/2019/05/21/mobile_video</id><content type="html" xml:base="http://localhost:4000/ELAT/blog/2019/05/21/mobile_video/">&lt;h4 id=&quot;mobile-records-vs-browser-records&quot;&gt;Mobile records vs Browser records&lt;/h4&gt;
+&lt;p&gt;This is the second special case that ELAT had to tackle, and it was caused by the introduction of the edX mobile
+app, which changed the structure of video related records compared to the browser video records.
+&lt;em&gt;Discovered and fixed 21/05/2019&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;This is how a &lt;code class=&quot;highlighter-rouge&quot;&gt;pause_video&lt;/code&gt; record looks like:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{
+  &quot;accept_language&quot;: &quot;en-IN&quot;,
+  &quot;agent&quot;: &quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393&quot;,
+  &quot;context&quot;: {
+    &quot;course_id&quot;: &quot;course-v1:DelftX+EX101x+3T2016&quot;,
+    &quot;org_id&quot;: &quot;DelftX&quot;,
+    &quot;path&quot;: &quot;/event&quot;,
+    &quot;user_id&quot;: 888888
+  },
+  &quot;event&quot;: &quot;{\&quot;code\&quot;: \&quot;zppgbNoqBBI\&quot;, \&quot;id\&quot;: \&quot;ba666985e20d4eb18e593461c28790c0\&quot;, \&quot;currentTime\&quot;: 303.9990418602173}&quot;,
+  &quot;event_source&quot;: &quot;browser&quot;,
+  &quot;event_type&quot;: &quot;pause_video&quot;,
+  &quot;host&quot;: &quot;courses.edx.org&quot;,
+  &quot;ip&quot;: &quot;N.N.N.N&quot;,
+  &quot;name&quot;: &quot;pause_video&quot;,
+  &quot;page&quot;: &quot;https://courses.edx.org/courses/course-v1:DelftX+EX101x+3T2016/courseware/153c585b5fc643008fafb60c35aaa575/9070b59046dc453998e33b2ccf344ff5/?child=first&quot;,
+  &quot;referer&quot;: &quot;https://courses.edx.org/courses/course-v1:DelftX+EX101x+3T2016/courseware/153c585b5fc643008fafb60c35aaa575/9070b59046dc453998e33b2ccf344ff5/?child=first&quot;,
+  &quot;session&quot;: &quot;8940f3610cfb8825b7a7cd6b85bfa52f&quot;,
+  &quot;time&quot;: &quot;2016-12-16T01:43:57.340314+00:00&quot;,
+  &quot;username&quot;: &quot;AAAAAA&quot;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This is another &lt;code class=&quot;highlighter-rouge&quot;&gt;pause_video&lt;/code&gt; record:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{
+  &quot;accept_language&quot;: &quot;&quot;,
+  &quot;agent&quot;: &quot;Dalvik/2.1.0 (Linux; U; Android 6.0.1; SM-N920C Build/MMB29K)&quot;,
+  &quot;context&quot;: {
+    &quot;application&quot;: {
+      &quot;name&quot;: &quot;edx.mobileapp.android&quot;,
+      &quot;version&quot;: &quot;2.7.5&quot;
+    },
+    &quot;client&quot;: {
+      &quot;app&quot;: {
+        &quot;build&quot;: 2007005,
+        &quot;name&quot;: &quot;edX&quot;,
+        &quot;namespace&quot;: &quot;org.edx.mobile&quot;,
+        &quot;version&quot;: &quot;2.7.5&quot;
+      },
+      &quot;device&quot;: {
+        &quot;adTrackingEnabled&quot;: false,
+        &quot;advertisingId&quot;: &quot;ad_id&quot;,
+        &quot;id&quot;: &quot;hex_id&quot;,
+        &quot;manufacturer&quot;: &quot;samsung&quot;,
+        &quot;model&quot;: &quot;SM-N920C&quot;,
+        &quot;name&quot;: &quot;noblelte&quot;,
+        &quot;type&quot;: &quot;android&quot;
+      },
+      &quot;ip&quot;: &quot;N.N.N.N&quot;,
+      &quot;library&quot;: {
+        &quot;name&quot;: &quot;analytics-android&quot;,
+        &quot;version&quot;: &quot;3.4.0&quot;
+      },
+      &quot;locale&quot;: &quot;en-GB&quot;,
+      &quot;network&quot;: {
+        &quot;bluetooth&quot;: false,
+        &quot;carrier&quot;: &quot;STC&quot;,
+        &quot;cellular&quot;: false,
+        &quot;wifi&quot;: true
+      },
+      &quot;os&quot;: {
+        &quot;name&quot;: &quot;Android&quot;,
+        &quot;version&quot;: &quot;6.0.1&quot;
+      },
+      &quot;screen&quot;: {
+        &quot;density&quot;: 3.5,
+        &quot;height&quot;: 2560,
+        &quot;width&quot;: 1440
+      },
+      &quot;timezone&quot;: &quot;X/X&quot;
+    },
+    &quot;component&quot;: &quot;videoplayer&quot;,
+    &quot;course_id&quot;: &quot;course-v1:DelftX+EX101x+3T2016&quot;,
+    &quot;org_id&quot;: &quot;DelftX&quot;,
+    &quot;path&quot;: &quot;/segmentio/event&quot;,
+    &quot;received_at&quot;: &quot;2017-02-09T07:39:17.857000+00:00&quot;,
+    &quot;user_id&quot;: 999999
+  },
+  &quot;event&quot;: {
+    &quot;code&quot;: &quot;mobile&quot;,
+    &quot;currentTime&quot;: 33.751,
+    &quot;id&quot;: &quot;event_id&quot;
+  },
+  &quot;event_source&quot;: &quot;mobile&quot;,
+  &quot;event_type&quot;: &quot;pause_video&quot;,
+  &quot;host&quot;: &quot;courses.edx.org&quot;,
+  &quot;ip&quot;: &quot;&quot;,
+  &quot;name&quot;: &quot;edx.video.paused&quot;,
+  &quot;page&quot;: &quot;https://courses.edx.org/xblock&quot;,
+  &quot;referer&quot;: &quot;&quot;,
+  &quot;session&quot;: &quot;&quot;,
+  &quot;time&quot;: &quot;2017-02-09T07:38:48.857000+00:00&quot;,
+  &quot;username&quot;: &quot;XXXXXXXX&quot;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The records look pretty different, and that is because the second one is for a student using the edX mobile app,
+which apparently can track much more information about the device being used to interact with the video.
+The important difference, however, is in the &lt;code class=&quot;highlighter-rouge&quot;&gt;event&lt;/code&gt; field of both records, since ELAT uses this to find the 
+&lt;em&gt;id of the video&lt;/em&gt; and process the session of a student interacting with that particular video.
+This is how it looks in the browser record (which was the type of record used to develop ELAT):&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &quot;event&quot;: &quot;{\&quot;code\&quot;: \&quot;zppgbNoqBBI\&quot;, \&quot;id\&quot;: \&quot;ba666985e20d4eb18e593461c28790c0\&quot;, \&quot;currentTime\&quot;: 303.9990418602173}&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;While for the mobile record, it looks like this:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&quot;event&quot;: {
+  &quot;code&quot;: &quot;mobile&quot;,
+  &quot;currentTime&quot;: 33.751,
+  &quot;id&quot;: &quot;39b0ffc9bfab486fa9ab479f64d730b3&quot;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;In the first one, the whole value for the &lt;code class=&quot;highlighter-rouge&quot;&gt;event&lt;/code&gt; field is a string, not a JSON object, therefore the&lt;br /&gt;
+quotes are being &lt;a href=&quot;https://en.wikipedia.org/wiki/Escape_character&quot;&gt;“escaped”&lt;/a&gt; by adding a backslash 
+like this &lt;code class=&quot;highlighter-rouge&quot;&gt;\&lt;/code&gt;  in front of them. 
+To process this values, ELAT had to read this string and parse it again to create a new “mini-object” 
+for the event, and then read the values of each field.
+The second one is a normal nested JSON object (check the &lt;code class=&quot;highlighter-rouge&quot;&gt;context&lt;/code&gt; field of both records, those are nested JSON
+objects), so the quotes do not have to be escaped.
+We may never find out why it was recorded as a string in the browser records, but as an object in the mobile app,
+all we know is that ELAT has to identify video records from a mobile application and process them differently than 
+the browser records.&lt;/p&gt;</content><author><name>Manuel</name></author><summary type="html">Mobile records vs Browser records This is the second special case that ELAT had to tackle, and it was caused by the introduction of the edX mobile app, which changed the structure of video related records compared to the browser video records. Discovered and fixed 21/05/2019</summary></entry><entry><title type="html">ID Mismatch</title><link href="http://localhost:4000/ELAT/blog/2019/05/20/id_mismatch/" rel="alternate" type="text/html" title="ID Mismatch" /><published>2019-05-20T13:15:53+00:00</published><updated>2019-05-20T13:15:53+00:00</updated><id>http://localhost:4000/ELAT/blog/2019/05/20/id_mismatch</id><content type="html" xml:base="http://localhost:4000/ELAT/blog/2019/05/20/id_mismatch/">&lt;h4 id=&quot;old-video-new-course&quot;&gt;Old video, New course&lt;/h4&gt;
+&lt;p&gt;The first of many adaptations for ELAT! This was not necessarily a change on the data, but a situation that 
+was not foreseen during development: some courses have many life cycles! This means that some course elements 
+(like videos or quizzes) will have very similar ids, which can cause a mismatch when processing a course 
+that has run in previous editions.
+&lt;em&gt;Discovered and fixed 20/05/2019&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;If you remember the &lt;a href=&quot;/ELAT/docs/process&quot;&gt;process&lt;/a&gt; pipeline, once the metadata is processed, ELAT will check 
+every log record for the current &lt;strong&gt;course id&lt;/strong&gt;, to avoid unnecessary processing for records of other courses.
+The initial implementation, however, was only tested with courses that were first of their series, so there
+was never a case where one of the courses had already happened. 
+With further evaluation, it was discovered that the course id, for example &lt;strong&gt;FP101x&lt;/strong&gt; or &lt;strong&gt;EX103x&lt;/strong&gt;, was present
+in records from the 2015, 2016 and 2017 editions. Since some courses allow to be self-paced, it can happen that 
+students were enrolled in a previous edition, and their interaction records appear in logs together with the records 
+of students in the latest edition.&lt;/p&gt;
+
+&lt;p&gt;The easiest way to fix this is by expanding the course id to include the edition, so &lt;strong&gt;FP101x&lt;/strong&gt; is now &lt;strong&gt;FP101x-3T2015&lt;/strong&gt;
+and &lt;strong&gt;EX103x&lt;/strong&gt; is &lt;strong&gt;EX103x-2T2016&lt;/strong&gt;. All course elements contain this longer identifier and checking for this compared to
+ the short version caused no issues in the performance or results of ELAT.&lt;/p&gt;</content><author><name>Manuel</name></author><summary type="html">Old video, New course The first of many adaptations for ELAT! This was not necessarily a change on the data, but a situation that was not foreseen during development: some courses have many life cycles! This means that some course elements (like videos or quizzes) will have very similar ids, which can cause a mismatch when processing a course that has run in previous editions. Discovered and fixed 20/05/2019</summary></entry><entry><title type="html">Welcome to ELAT!</title><link href="http://localhost:4000/ELAT/blog/2019/05/16/welcome-to-elat/" rel="alternate" type="text/html" title="Welcome to ELAT!" /><published>2019-05-16T17:41:09+00:00</published><updated>2019-05-16T17:41:09+00:00</updated><id>http://localhost:4000/ELAT/blog/2019/05/16/welcome-to-elat</id><content type="html" xml:base="http://localhost:4000/ELAT/blog/2019/05/16/welcome-to-elat/">&lt;p&gt;This is the beginning of the edX Logfile Analysis Tool, there is a lot to come, and it will be posted here
 for you to follow.&lt;/p&gt;</content><author><name>Manuel</name></author><summary type="html">This is the beginning of the edX Logfile Analysis Tool, there is a lot to come, and it will be posted here for you to follow.</summary></entry></feed>

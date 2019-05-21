@@ -18,7 +18,7 @@ can be obtained in csv format for further analysis with the **download** buttons
 7. (Optional) After obtaining the csv files, it is possible to delete the database by pressing the
  *Clear Database* button at the bottom. This allows to repeat the process for another course
  
-#### Step-by-Step Images: 
+#### Step-by-Step Detail: (add images when prototype is reviewed)
 
 1. Workbench Home (Describe Course Details and Database Details)
 
@@ -28,7 +28,7 @@ can be obtained in csv format for further analysis with the **download** buttons
 
 4. Logfiles (Describe Accepted Formats)
 
-5. Indicators (Describe Indicators and Graphs)
+5. Dashboard: Indicators (Describe Indicators and Graphs)
 
 6. Download Files
 

@@ -52,6 +52,14 @@
     
     
     {
+      "title": "Special Cases",
+      "url": "/ELAT/docs/special_cases/"
+
+    },
+  
+    
+    
+    {
       "title": "About - Contact",
       "url": "/ELAT/docs/about/"
 
@@ -85,6 +93,16 @@
   
 
 
+  
+  {
+  "title": "Mobile Video Interaction",
+  "url": "/ELAT/blog/2019/05/21/mobile_video/"
+  },
+  
+  {
+  "title": "ID Mismatch",
+  "url": "/ELAT/blog/2019/05/20/id_mismatch/"
+  },
   
   {
   "title": "Welcome to ELAT!",
