@@ -134,6 +134,14 @@ To process this values, ELAT had to read this string and parse it again to creat
 for the event, and then read the values of each field.
 The second one is a normal nested JSON object (check the `context` field of both records, those are nested JSON
 objects), so the quotes do not have to be escaped.
+
+##### Discovery
+As we tested ELAT on newer courses (read: with mobile viewing records) some course interaction entries were being processed
+with no video_id, which raised an error in the database, because it is a required field.
+Then it was a matter of diving into log files, searching for the user id and date of those video interactions to find that those
+records did have a video id, but in different format.
+
+##### Fix
 We may never find out why it was recorded as a string in the browser records, but as an object in the mobile app,
 all we know is that ELAT has to identify video records from a mobile application and process them differently than 
 the browser records. 

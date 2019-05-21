@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-US"><generator uri="https://jekyllrb.com/" version="3.8.4">Jekyll</generator><link href="http://localhost:4000/ELAT/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/ELAT/" rel="alternate" type="text/html" hreflang="en-US" /><updated>2019-05-21T12:42:17+00:00</updated><id>http://localhost:4000/ELAT/feed.xml</id><title type="html">ELAT</title><subtitle>edX Logfile Analysis Tool
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-US"><generator uri="https://jekyllrb.com/" version="3.8.4">Jekyll</generator><link href="http://localhost:4000/ELAT/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/ELAT/" rel="alternate" type="text/html" hreflang="en-US" /><updated>2019-05-21T15:12:01+00:00</updated><id>http://localhost:4000/ELAT/feed.xml</id><title type="html">ELAT</title><subtitle>edX Logfile Analysis Tool
 </subtitle><entry><title type="html">Mobile Video Interaction</title><link href="http://localhost:4000/ELAT/blog/2019/05/21/mobile_video/" rel="alternate" type="text/html" title="Mobile Video Interaction" /><published>2019-05-21T11:44:19+00:00</published><updated>2019-05-21T11:44:19+00:00</updated><id>http://localhost:4000/ELAT/blog/2019/05/21/mobile_video</id><content type="html" xml:base="http://localhost:4000/ELAT/blog/2019/05/21/mobile_video/">&lt;h4 id=&quot;mobile-records-vs-browser-records&quot;&gt;Mobile records vs Browser records&lt;/h4&gt;
 &lt;p&gt;This is the second special case that ELAT had to tackle, and it was caused by the introduction of the edX mobile
 app, which changed the structure of video related records compared to the browser video records.
@@ -123,8 +123,16 @@ like this &lt;code class=&quot;highlighter-rouge&quot;&gt;\&lt;/code&gt;  in fro
 To process this values, ELAT had to read this string and parse it again to create a new “mini-object” 
 for the event, and then read the values of each field.
 The second one is a normal nested JSON object (check the &lt;code class=&quot;highlighter-rouge&quot;&gt;context&lt;/code&gt; field of both records, those are nested JSON
-objects), so the quotes do not have to be escaped.
-We may never find out why it was recorded as a string in the browser records, but as an object in the mobile app,
+objects), so the quotes do not have to be escaped.&lt;/p&gt;
+
+&lt;h5 id=&quot;discovery&quot;&gt;Discovery&lt;/h5&gt;
+&lt;p&gt;As we tested ELAT on newer courses (read: with mobile viewing records) some course interaction entries were being processed
+with no video_id, which raised an error in the database, because it is a required field.
+Then it was a matter of diving into log files, searching for the user id and date of those video interactions to find that those
+records did have a video id, but in different format.&lt;/p&gt;
+
+&lt;h5 id=&quot;fix&quot;&gt;Fix&lt;/h5&gt;
+&lt;p&gt;We may never find out why it was recorded as a string in the browser records, but as an object in the mobile app,
 all we know is that ELAT has to identify video records from a mobile application and process them differently than 
 the browser records.&lt;/p&gt;</content><author><name>Manuel</name></author><summary type="html">Mobile records vs Browser records This is the second special case that ELAT had to tackle, and it was caused by the introduction of the edX mobile app, which changed the structure of video related records compared to the browser video records. Discovered and fixed 21/05/2019</summary></entry><entry><title type="html">ID Mismatch</title><link href="http://localhost:4000/ELAT/blog/2019/05/20/id_mismatch/" rel="alternate" type="text/html" title="ID Mismatch" /><published>2019-05-20T13:15:53+00:00</published><updated>2019-05-20T13:15:53+00:00</updated><id>http://localhost:4000/ELAT/blog/2019/05/20/id_mismatch</id><content type="html" xml:base="http://localhost:4000/ELAT/blog/2019/05/20/id_mismatch/">&lt;h4 id=&quot;old-video-new-course&quot;&gt;Old video, New course&lt;/h4&gt;
 &lt;p&gt;The first of many adaptations for ELAT! This was not necessarily a change on the data, but a situation that 
@@ -142,6 +150,13 @@ in records from the 2015, 2016 and 2017 editions. Since some courses allow to be
 students were enrolled in a previous edition, and their interaction records appear in logs together with the records 
 of students in the latest edition.&lt;/p&gt;
 
+&lt;h5 id=&quot;discovery&quot;&gt;Discovery&lt;/h5&gt;
+&lt;p&gt;While testing some indicators, it was necessary to check the number of times students were interacting with the course material.
+For this, ELAT would use the course elements extracted from the metadata, and compare them with the corresponding sessions
+using the element id. Some sessions were interacting with elements that did not exist in the database, which caused an
+error in the processing of the indicator. Those non-existent ids were dated for previous years.&lt;/p&gt;
+
+&lt;h5 id=&quot;fix&quot;&gt;Fix&lt;/h5&gt;
 &lt;p&gt;The easiest way to fix this is by expanding the course id to include the edition, so &lt;strong&gt;FP101x&lt;/strong&gt; is now &lt;strong&gt;FP101x-3T2015&lt;/strong&gt;
 and &lt;strong&gt;EX103x&lt;/strong&gt; is &lt;strong&gt;EX103x-2T2016&lt;/strong&gt;. All course elements contain this longer identifier and checking for this compared to
  the short version caused no issues in the performance or results of ELAT.&lt;/p&gt;</content><author><name>Manuel</name></author><summary type="html">Old video, New course The first of many adaptations for ELAT! This was not necessarily a change on the data, but a situation that was not foreseen during development: some courses have many life cycles! This means that some course elements (like videos or quizzes) will have very similar ids, which can cause a mismatch when processing a course that has run in previous editions. Discovered and fixed 20/05/2019</summary></entry><entry><title type="html">Welcome to ELAT!</title><link href="http://localhost:4000/ELAT/blog/2019/05/16/welcome-to-elat/" rel="alternate" type="text/html" title="Welcome to ELAT!" /><published>2019-05-16T17:41:09+00:00</published><updated>2019-05-16T17:41:09+00:00</updated><id>http://localhost:4000/ELAT/blog/2019/05/16/welcome-to-elat</id><content type="html" xml:base="http://localhost:4000/ELAT/blog/2019/05/16/welcome-to-elat/">&lt;p&gt;This is the beginning of the edX Logfile Analysis Tool, there is a lot to come, and it will be posted here

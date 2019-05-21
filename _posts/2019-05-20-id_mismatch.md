@@ -21,6 +21,13 @@ in records from the 2015, 2016 and 2017 editions. Since some courses allow to be
 students were enrolled in a previous edition, and their interaction records appear in logs together with the records 
 of students in the latest edition. 
 
+##### Discovery
+While testing some indicators, it was necessary to check the number of times students were interacting with the course material.
+For this, ELAT would use the course elements extracted from the metadata, and compare them with the corresponding sessions
+using the element id. Some sessions were interacting with elements that did not exist in the database, which caused an
+error in the processing of the indicator. Those non-existent ids were dated for previous years.
+
+##### Fix
 The easiest way to fix this is by expanding the course id to include the edition, so **FP101x** is now **FP101x-3T2015**
 and **EX103x** is **EX103x-2T2016**. All course elements contain this longer identifier and checking for this compared to
  the short version caused no issues in the performance or results of ELAT.
