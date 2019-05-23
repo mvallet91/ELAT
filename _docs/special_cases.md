@@ -25,3 +25,13 @@ app, which changed the structure of video related records compared to the browse
 *Discovered and fixed 21/05/2019*
 
 [Read More](/ELAT/blog/2019/05/21/mobile_video/)
+
+#### Mobile records strike again
+
+This is a weird one, and it appears once again in video records for the mobile edX app. 
+Some records have a timestamp like they happened days before the current logfile, and
+that is not possible, since the logs only record events for one day.
+
+*Discovered and fixed 22/05/2019*
+
+[Read More](/ELAT/blog/2019/05/22/device_time/)
