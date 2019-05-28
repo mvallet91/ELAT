@@ -68,8 +68,8 @@ When reloaded, it will automatically start processing indicators and graph data,
 
 #### 6. Download Files
 By pressing the corresponding button, ELAT will prepare the csv file(s) for download. The fields of each one are described in [sessions](/ELAT/docs/sessions)
- ![alt text](/ELAT/img/S15.png "Download files")
+ ![alt text](/ELAT/img/S15.PNG "Download files")
  
 #### 7. Delete
 The button to delete everything is located under the `Course Details` table. If confirmed, it will delete all the information, tables and schema from your machine. This allows to start the process again, with a new course for example.
- ![alt text](/ELAT/img/S16.png "To Delete or not to Delete")
+ ![alt text](/ELAT/img/S16.PNG "To Delete or not to Delete")
