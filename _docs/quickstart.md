@@ -51,12 +51,11 @@ Similar to metadata, press the 'Upload Files' button, then under 'Select log fil
 ![alt text](/ELAT/img/S07.png "Processing Metadata")
 This step can take a few hours. It is recommended to close other tabs on the browser and other applications.
 
-#### 5. Dashboard: Indicators (Describe Indicators and Graphs)
-
 Once the log processing is done, ELAT will prompt again to reload the page.
 ![alt text](/ELAT/img/S08.png "Done with logfiles")
 
-Then it will automatically start processing indicators and graph data, updating with every step.
+#### 5. Dashboard: Indicators (Describe Indicators and Graphs)
+When reloaded, it will automatically start processing indicators and graph data, updating with every step.
 ![alt text](/ELAT/img/S09.png "Processing indicatos and graph")
 
  The values for *Time Spent on Video* and *Students that Watched at Least one Video* will be prepared, as well as the graphs.
@@ -67,11 +66,10 @@ Then it will automatically start processing indicators and graph data, updating 
  ![alt text](/ELAT/img/S13.png "Zoom-able Sessions per Day")
  ![alt text](/ELAT/img/S14.png "Weekly Forum Analysis")
 
-
-
-
-
-
 #### 6. Download Files
-
+By pressing the corresponding button, ELAT will prepare the csv file(s) for download. The fields of each one are described in [sessions](/ELAT/docs/sessions)
+ ![alt text](/ELAT/img/S15.png "Download files")
+ 
 #### 7. Delete
+The button to delete everything is located under the `Course Details` table. If confirmed, it will delete all the information, tables and schema from your machine. This allows to start the process again, with a new course for example.
+ ![alt text](/ELAT/img/S16.png "To Delete or not to Delete")
