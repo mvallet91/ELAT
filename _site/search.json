@@ -70,29 +70,23 @@
     
     
     {
-      "title": "Markdown Cheatsheet",
-      "url": "/ELAT/docs/cheatsheet/"
-
-    },
-  
-    
-    
-    {
-      "title": "Font Awesome Icon List",
-      "url": "/ELAT/docs/font-awesome/"
-
-    },
-  
-    
-    
-    {
-      "title": "Bootstrap Features",
-      "url": "/ELAT/docs/bootstrap/"
+      "title": "FP101x",
+      "url": "/ELAT/docs/fp101x/"
 
     },
   
 
 
+  
+  {
+  "title": "Sample Data",
+  "url": "/ELAT/blog/2019/06/06/sample_data/"
+  },
+  
+  {
+  "title": "Device time lies",
+  "url": "/ELAT/blog/2019/05/22/device_time/"
+  },
   
   {
   "title": "Mobile Video Interaction",

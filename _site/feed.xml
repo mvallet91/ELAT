@@ -1,5 +1,85 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-US"><generator uri="https://jekyllrb.com/" version="3.8.4">Jekyll</generator><link href="http://localhost:4000/ELAT/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/ELAT/" rel="alternate" type="text/html" hreflang="en-US" /><updated>2019-05-22T09:44:26+00:00</updated><id>http://localhost:4000/ELAT/feed.xml</id><title type="html">ELAT</title><subtitle>edX Logfile Analysis Tool
-</subtitle><entry><title type="html">Mobile Video Interaction</title><link href="http://localhost:4000/ELAT/blog/2019/05/21/mobile_video/" rel="alternate" type="text/html" title="Mobile Video Interaction" /><published>2019-05-21T11:44:19+00:00</published><updated>2019-05-21T11:44:19+00:00</updated><id>http://localhost:4000/ELAT/blog/2019/05/21/mobile_video</id><content type="html" xml:base="http://localhost:4000/ELAT/blog/2019/05/21/mobile_video/">&lt;h4 id=&quot;mobile-records-vs-browser-records&quot;&gt;Mobile records vs Browser records&lt;/h4&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-US"><generator uri="https://jekyllrb.com/" version="3.8.4">Jekyll</generator><link href="http://localhost:4000/ELAT/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/ELAT/" rel="alternate" type="text/html" hreflang="en-US" /><updated>2019-07-02T08:29:07+00:00</updated><id>http://localhost:4000/ELAT/feed.xml</id><title type="html">ELAT</title><subtitle>edX Logfile Analysis Tool
+</subtitle><entry><title type="html">Sample Data</title><link href="http://localhost:4000/ELAT/blog/2019/06/06/sample_data/" rel="alternate" type="text/html" title="Sample Data" /><published>2019-06-06T17:16:18+00:00</published><updated>2019-06-06T17:16:18+00:00</updated><id>http://localhost:4000/ELAT/blog/2019/06/06/sample_data</id><content type="html" xml:base="http://localhost:4000/ELAT/blog/2019/06/06/sample_data/">&lt;h4 id=&quot;testing-samples-available&quot;&gt;Testing Samples Available&lt;/h4&gt;
+&lt;p&gt;After the first “focus group” where ELAT was shown to interested parties in TU Delft, it was 
+decided that some sample data would be very useful for more people to get a good idea of the capabilities
+of the tool, without (or before) having to go through the data-gathering process of their institution.&lt;/p&gt;
+
+&lt;p&gt;Under the button “Sample Data”, courses will be made available for interacting with the indicators and
+graphs. The data cannot be downloaded, and for privacy reasons, only aggregated indicators are available, 
+no individual values.&lt;/p&gt;</content><author><name>Manuel</name></author><summary type="html">Testing Samples Available After the first “focus group” where ELAT was shown to interested parties in TU Delft, it was decided that some sample data would be very useful for more people to get a good idea of the capabilities of the tool, without (or before) having to go through the data-gathering process of their institution.</summary></entry><entry><title type="html">Device time lies</title><link href="http://localhost:4000/ELAT/blog/2019/05/22/device_time/" rel="alternate" type="text/html" title="Device time lies" /><published>2019-05-22T10:06:43+00:00</published><updated>2019-05-22T10:06:43+00:00</updated><id>http://localhost:4000/ELAT/blog/2019/05/22/device_time</id><content type="html" xml:base="http://localhost:4000/ELAT/blog/2019/05/22/device_time/">&lt;h4 id=&quot;mobile-records-strike-again&quot;&gt;Mobile records strike again&lt;/h4&gt;
+
+&lt;p&gt;This is a weird one, and it appears once again in video records for the mobile edX app. 
+When processing a record, ELAT trusts that the information is correct, and there is no way to verify 
+many of the values provided.
+Maybe it is possible to check if the referred course element exists, but whatever is written on the record is
+assumed as the truth.
+The problem here is that some records have a timestamp like they happened days before the current logfile, and
+that is not possible, since the logs only record events for one day!
+Look at the record below (some info was removed because it was not useful now):&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{
+  &quot;accept_language&quot;: &quot;&quot;,
+  &quot;agent&quot;: &quot;Dalvik/2.1.0 (Linux; U; Android 6.0.1; Che1-L04 Build/Che1-L04)&quot;,
+  &quot;context&quot;: {
+    &quot;application&quot;: {
+      &quot;name&quot;: &quot;edx.mobileapp.android&quot;,
+      &quot;version&quot;: &quot;2.7.5&quot;
+    },
+    &quot;client&quot;: {
+      ...client info...
+    },
+    &quot;component&quot;: &quot;videoplayer&quot;,
+    &quot;course_id&quot;: &quot;course-v1:DelftX+AE1110x+2T2017&quot;,
+    &quot;org_id&quot;: &quot;DelftX&quot;,
+    &quot;path&quot;: &quot;/segmentio/event&quot;,
+    &quot;received_at&quot;: &quot;2017-05-15T02:11:53.196000+00:00&quot;,
+    &quot;user_id&quot;: 9999999
+  },
+  &quot;event&quot;: {
+    ...event info...
+  },
+  &quot;event_source&quot;: &quot;mobile&quot;,
+  &quot;event_type&quot;: &quot;seek_video&quot;,
+  &quot;host&quot;: &quot;courses.edx.org&quot;,
+  &quot;ip&quot;: &quot;&quot;,
+  &quot;name&quot;: &quot;edx.video.position.changed&quot;,
+  &quot;page&quot;: &quot;https://courses.edx.org/xblock&quot;,
+  &quot;referer&quot;: &quot;&quot;,
+  &quot;session&quot;: &quot;&quot;,
+  &quot;time&quot;: &quot;2017-05-02T06:59:46.196000+00:00&quot;,
+  &quot;username&quot;: &quot;AAAAAA&quot;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;In the &lt;code class=&quot;highlighter-rouge&quot;&gt;context&lt;/code&gt; field, it states that the record was &lt;code class=&quot;highlighter-rouge&quot;&gt;received_ at&lt;/code&gt; the 15 of May, just like all the other records of the
+&lt;code class=&quot;highlighter-rouge&quot;&gt;delftx-edx-events-2017-05-15.log&lt;/code&gt; file.
+The &lt;code class=&quot;highlighter-rouge&quot;&gt;time&lt;/code&gt; field, however, refers to the 2 of May, at a completely different time (for all other records, the values of 
+&lt;code class=&quot;highlighter-rouge&quot;&gt;received_at&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;time&lt;/code&gt; had differences of less than one second).
+One explanation could be if edX app takes the time of the device, and this particular user had the time wrong for some reason.
+Or maybe the user downloaded, and watched a video the 2nd of May with the app offline, and did not go online until the 15 of 
+May on that device.
+All records of this user had &lt;code class=&quot;highlighter-rouge&quot;&gt;time&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;received_at&lt;/code&gt; within a small time frame, so it’s not useful to determine which option 
+is more likely to be correct.
+In addition, the official starting date of the course is May 1st, so both explanations are still plausible. 
+Another case of series of video interaction records from the mobile app was found, and in this case it was very clear 
+that all records were &lt;code class=&quot;highlighter-rouge&quot;&gt;received_at&lt;/code&gt; approximately the same time, but the &lt;code class=&quot;highlighter-rouge&quot;&gt;time&lt;/code&gt; of each record was throughout almost an hour.
+We can assume that the mobile app allows users to interact with the video elements and then they get recorded or &lt;em&gt;received&lt;/em&gt;
+when the user goes online, at a different time.&lt;/p&gt;
+
+&lt;h5 id=&quot;discovery&quot;&gt;Discovery&lt;/h5&gt;
+&lt;p&gt;One of the options for the date range of the graphs is “All uploaded files”, perfect if the user wants to visualize sessions
+outside of the official course dates, or to verify the range of all the logfiles they have uploaded.
+Some courses however, started showing values in dates that were never uploaded to the running instance of ELAT. 
+The chart below shows the sessions from the 10 to 15 of May 2017, for the &lt;code class=&quot;highlighter-rouge&quot;&gt;AE1110x-2T2017&lt;/code&gt; course, 
+which runs from May 1st 2017 to March 2018. There is one session from one student the 2nd of May, and that logfile
+was never processed by ELAT, which corresponds to the record shown above.
+&lt;img src=&quot;/ELAT/img/barChart_badDates.png&quot; alt=&quot;alt text&quot; title=&quot;Date Error Example&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Once again, the only way to find the source of this issue was to find the “out of range” session in the database, and then go 
+file by file searching for the user id on the rouge session until the record appeared, showing different the value of the 
+incorrect date in the &lt;code class=&quot;highlighter-rouge&quot;&gt;time&lt;/code&gt; field, while the &lt;code class=&quot;highlighter-rouge&quot;&gt;received_at&lt;/code&gt; field was in the correct day.&lt;/p&gt;
+
+&lt;h5 id=&quot;fix&quot;&gt;Fix&lt;/h5&gt;
+&lt;p&gt;Given that the error is extremely rare, showing up for one student for one session out of thousands, and we are not sure of
+the reason for this time difference, these sessions will be kept, since they belong to the time frame of the course.&lt;/p&gt;</content><author><name>Manuel</name></author><summary type="html">Mobile records strike again</summary></entry><entry><title type="html">Mobile Video Interaction</title><link href="http://localhost:4000/ELAT/blog/2019/05/21/mobile_video/" rel="alternate" type="text/html" title="Mobile Video Interaction" /><published>2019-05-21T11:44:19+00:00</published><updated>2019-05-21T11:44:19+00:00</updated><id>http://localhost:4000/ELAT/blog/2019/05/21/mobile_video</id><content type="html" xml:base="http://localhost:4000/ELAT/blog/2019/05/21/mobile_video/">&lt;h4 id=&quot;mobile-records-vs-browser-records&quot;&gt;Mobile records vs Browser records&lt;/h4&gt;
 &lt;p&gt;This is the second special case that ELAT had to tackle, and it was caused by the introduction of the edX mobile
 app, which changed the structure of video related records compared to the browser video records.
 &lt;em&gt;Discovered and fixed 21/05/2019&lt;/em&gt;&lt;/p&gt;
