@@ -3,8 +3,6 @@ title: Troubleshooting
 permalink: /docs/troubleshooting/
 ---
 
-### Troubleshooting
-
 Since ELAT is only working on the browser, it is directly affected by any restrictions or errors Chrome (or Firefox) might suffer. 
 Another issue caused by this client-side configuration, is that there is no way for developers to know if a user is having an issue!
 There is no server, so it's all up to the person in front of the keyboard to figure it out.
@@ -22,7 +20,7 @@ Some things to try are:
 
 - Check the error messages
 
-    1. Open the *Console*: in Windows and Chrome, press the *F12* key or *Ctrl + Alt + J*. In Mac, press *Cmd + Option + J*
+    1. Open the *Console:* in Windows and Chrome, press the *F12* key or *Ctrl + Alt + J*. In Mac, press *Cmd + Option + J*
     
     2. The problem may be in your configuration, if it looks like an issue in ELAT, let us know [here](https://github.com/mvallet91/ELAT-Workbench/issues)
 

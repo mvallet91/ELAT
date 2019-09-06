@@ -62,14 +62,23 @@ We can organize it for easier human reading:
   "event_type": "play_video"
 }
 ````
-This particular event indicates that the student **999999** of the course **DelftX+FP101x** started watching 
+This particular event indicates that the learner **999999** of the course **DelftX+FP101x** started watching 
 video **79633017711e44c9878df4f337014766** at **16:15:36** of October 15, 2015.
-ELAT will read each record and find the ones that correspond to the course it's currently processing, and
-from those, identify which ones correspond to the same user and belong to the same [session](/ELAT/docs/sessions).
 
+ELAT will process the files by session type, for instance, the steps for *video* sessions are the following: 
+
+ 1. Read each record in the file and filter the ones that correspond to the course it's currently processing, that refer to a video component
+ 
+ 2. Group all these video records by the learner id, and order them by timestamp
+ 
+ 3. From the set of video records for a learner, for instance **999999**, ELAT will process ordered records one by one and count pauses, forward and backward seeks, and other video-related activities to form a [session](/ELAT/docs/sessions)
+ 
+ 4. If the time between video records for a learner exceeds 30 minutes, the [session](/ELAT/docs/sessions) is finished and a new one is started
+ 
+ This process is executed for General Sessions (i.e. any activity in the course, including the rest of the types), Forum Sessions, Problem Sessions (Quiz/Assessment) and Video Sessions.
+   
 ##### 5. Info is stored in browser 
-Once processed, the sessions are stored into the [database](https://github.com/AngusGLChen/DelftX-Daily-Database#database-schema)
-with the information extracted from the logfiles.
+Once processed, the sessions are stored into the [database](https://github.com/AngusGLChen/DelftX-Daily-Database#database-schema).
 
 ##### 6. System prepares indicators, graphs and files for download 
 
