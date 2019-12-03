@@ -1,5 +1,26 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-US"><generator uri="https://jekyllrb.com/" version="3.8.4">Jekyll</generator><link href="http://localhost:4000/ELAT/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/ELAT/" rel="alternate" type="text/html" hreflang="en-US" /><updated>2019-09-06T10:07:42+00:00</updated><id>http://localhost:4000/ELAT/feed.xml</id><title type="html">ELAT</title><subtitle>edX Logfile Analysis Tool
-</subtitle><entry><title type="html">Sample Data</title><link href="http://localhost:4000/ELAT/blog/2019/06/06/sample_data/" rel="alternate" type="text/html" title="Sample Data" /><published>2019-06-06T17:16:18+00:00</published><updated>2019-06-06T17:16:18+00:00</updated><id>http://localhost:4000/ELAT/blog/2019/06/06/sample_data</id><content type="html" xml:base="http://localhost:4000/ELAT/blog/2019/06/06/sample_data/">&lt;h4 id=&quot;testing-samples-available&quot;&gt;Testing Samples Available&lt;/h4&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-US"><generator uri="https://jekyllrb.com/" version="3.8.4">Jekyll</generator><link href="http://localhost:4000/ELAT/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/ELAT/" rel="alternate" type="text/html" hreflang="en-US" /><updated>2019-12-03T11:20:42+00:00</updated><id>http://localhost:4000/ELAT/feed.xml</id><title type="html">ELAT</title><subtitle>edX Logfile Analysis Tool
+</subtitle><entry><title type="html">LAK20 Submission</title><link href="http://localhost:4000/ELAT/blog/2019/12/02/elat_lak20/" rel="alternate" type="text/html" title="LAK20 Submission" /><published>2019-12-02T12:14:51+00:00</published><updated>2019-12-02T12:14:51+00:00</updated><id>http://localhost:4000/ELAT/blog/2019/12/02/elat_lak20</id><content type="html" xml:base="http://localhost:4000/ELAT/blog/2019/12/02/elat_lak20/">&lt;p&gt;Today we received excellent news!&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+Dear ELAT Team,
+Congratulations. We are glad to inform you that your paper:
+edX Log Data Analysis Made Easy
+has been accepted as a full research paper for the 10th International 
+Conference on Learning Analytics and Knowledge (LAK20) to be held in 
+Frankfurt am Main, Germany, March 23-27, 2020.
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Feel free to check out the &lt;a href=&quot;https://chauff.github.io/documents/publications/LAK2020-Torre.pdf&quot;&gt;article&lt;/a&gt; (preprint), and if you use
+or adapt ELAT for your work, please cite us:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;@inproceedings{Valle2020ELAT,
+ author = {Valle Torre, Manuel and Tan, Esther and Hauff, Claudia},
+ title = {edX Log Data Analysis Made Easy},
+ booktitle = {Proceedings of the 10th International Conference on Learning Analytics \&amp;amp; Knowledge},
+ series = {LAK20},
+ year = {2020},
+ location = {Frankfurt, Germany}
+} 
+&lt;/code&gt;&lt;/pre&gt;</content><author><name>Manuel</name></author><summary type="html">Today we received excellent news!</summary></entry><entry><title type="html">Sample Data</title><link href="http://localhost:4000/ELAT/blog/2019/06/06/sample_data/" rel="alternate" type="text/html" title="Sample Data" /><published>2019-06-06T17:16:18+00:00</published><updated>2019-06-06T17:16:18+00:00</updated><id>http://localhost:4000/ELAT/blog/2019/06/06/sample_data</id><content type="html" xml:base="http://localhost:4000/ELAT/blog/2019/06/06/sample_data/">&lt;h4 id=&quot;testing-samples-available&quot;&gt;Testing Samples Available&lt;/h4&gt;
 &lt;p&gt;After the first “focus group” where ELAT was shown to interested parties in TU Delft, it was 
 decided that some sample data would be very useful for more people to get a good idea of the capabilities
 of the tool, without (or before) having to go through the data-gathering process of their institution.&lt;/p&gt;
